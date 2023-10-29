@@ -1,0 +1,63 @@
+/* Center the content on the page */
+div {
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  /* Style the heading */
+  h2 {
+    font-size: 24px;
+    color: #333;
+    
+    font-family: 'Your Font Name', sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the label */
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  /* Style the input field */
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the button */
+  button {
+    background-color: #222222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  label[for="mobileNumber"] {
+    font-size: 20px; /* Adjust the font size to your preference */
+    color: #333; 
+    margin-right: 10px; 
+}
+  
+  /* Style the button on hover */
+  button:hover {
+    background-color: #0e0e0e;
+  }
+  
+  /* Style the generated UPC text */
+  div[generatedUpc] {
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+  }
+  

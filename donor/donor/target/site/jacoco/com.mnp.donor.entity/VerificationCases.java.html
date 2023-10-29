@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VerificationCases.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">donor</a> &gt; <a href="index.source.html" class="el_package">com.mnp.donor.entity</a> &gt; <span class="el_source">VerificationCases.java</span></div><h1>VerificationCases.java</h1><pre class="source lang-java linenums">package com.mnp.donor.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+<span class="fc" id="L11">public class VerificationCases {</span>
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String number;
+
+    private boolean isApproved;
+
+    private int outStandingPayments;
+
+    private Date date;
+
+    private boolean isCorporate;
+
+    private boolean isAuthorized;
+
+    private String contractualStatus; //cleared or not
+
+    private boolean isProhibited;
+
+    private String subJudice; //legal or illegal
+
+    private String ownershipStatus;//pending or not
+
+    public int getId() {
+<span class="fc" id="L38">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="fc" id="L42">        this.id = id;</span>
+<span class="fc" id="L43">    }</span>
+
+    public String getNumber() {
+<span class="fc" id="L46">        return number;</span>
+    }
+
+    public void setNumber(String number) {
+<span class="fc" id="L50">        this.number = number;</span>
+<span class="fc" id="L51">    }</span>
+
+    public boolean isApproved() {
+<span class="fc" id="L54">        return isApproved;</span>
+    }
+
+    public void setApproved(boolean isApproved) {
+<span class="fc" id="L58">        this.isApproved = isApproved;</span>
+<span class="fc" id="L59">    }</span>
+
+    public int getOutStandingPayments() {
+<span class="fc" id="L62">        return outStandingPayments;</span>
+    }
+
+    public void setOutStandingPayments(int outStandingPayments) {
+<span class="fc" id="L66">        this.outStandingPayments = outStandingPayments;</span>
+<span class="fc" id="L67">    }</span>
+
+    public Date getDate() {
+<span class="fc" id="L70">        return date;</span>
+    }
+
+    public void setDate(Date date) {
+<span class="fc" id="L74">        this.date = date;</span>
+<span class="fc" id="L75">    }</span>
+
+    public boolean isCorporate() {
+<span class="fc" id="L78">        return isCorporate;</span>
+    }
+
+    public void setCorporate(boolean isCorporate) {
+<span class="fc" id="L82">        this.isCorporate = isCorporate;</span>
+<span class="fc" id="L83">    }</span>
+
+    public boolean isAuthorized() {
+<span class="fc" id="L86">        return isAuthorized;</span>
+    }
+
+    public void setAuthorized(boolean isAuthorized) {
+<span class="fc" id="L90">        this.isAuthorized = isAuthorized;</span>
+<span class="fc" id="L91">    }</span>
+
+    public String getContractualStatus() {
+<span class="fc" id="L94">        return contractualStatus;</span>
+    }
+
+    public void setContractualStatus(String contractualStatus) {
+<span class="fc" id="L98">        this.contractualStatus = contractualStatus;</span>
+<span class="fc" id="L99">    }</span>
+
+    public boolean isProhibited() {
+<span class="fc" id="L102">        return isProhibited;</span>
+    }
+
+    public void setProhibited(boolean isProhibited) {
+<span class="fc" id="L106">        this.isProhibited = isProhibited;</span>
+<span class="fc" id="L107">    }</span>
+
+    public String getSubJudice() {
+<span class="fc" id="L110">        return subJudice;</span>
+    }
+
+    public void setSubJudice(String subJudice) {
+<span class="fc" id="L114">        this.subJudice = subJudice;</span>
+<span class="fc" id="L115">    }</span>
+
+    public String getOwnershipStatus() {
+<span class="fc" id="L118">        return ownershipStatus;</span>
+    }
+
+    public void setOwnershipStatus(String ownershipStatus) {
+<span class="fc" id="L122">        this.ownershipStatus = ownershipStatus;</span>
+<span class="fc" id="L123">    }</span>
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+donor,com.mnp.donor.controller,DonorController,45,30,0,2,13,9,5,3,5,2
+donor,com.mnp.donor.entity,VerificationCases,0,80,0,0,0,34,0,23,0,23
+donor,com.mnp.donor.entity,DonorSubscriber,0,31,0,0,0,13,0,9,0,9
+donor,com.mnp.donor.entity,Request,0,59,0,0,0,25,0,17,0,17
+donor,com.mnp.donor.dto,Responsedto,0,17,0,0,0,7,0,5,0,5
+donor,com.mnp.donor.service,UpcService,23,62,4,6,6,13,3,8,0,6
+donor,com.mnp.donor.service,VerificationService,175,94,28,14,44,29,20,13,5,7
+donor,com.mnp.donor.service,MnspspService,0,60,0,0,0,14,0,8,0,8
+donor,com.mnp.donor,DonorApplication,5,3,0,0,2,1,1,1,1,1

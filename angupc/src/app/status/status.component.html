@@ -1,0 +1,12 @@
+<div>
+    <h2>Get the Status of your Request</h2>
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" placeholder="Enter Your Mobile Number"><br><br>
+    <button (click)="getStatus()">Get Status</button>
+    <div *ngIf="statusdto.status">
+        <h3>Status:</h3>
+        <p>{{ statusdto.status }}</p>
+        <p>{{statusdto.reason}}</p>
+      </div>
+  </div>
+  

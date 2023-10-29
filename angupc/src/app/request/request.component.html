@@ -1,0 +1,7 @@
+<div *ngFor="let request of requests" class="request-item">
+    <div><b>Name:</b> {{ request.name }}</div>
+    <div><b>Number:</b> {{ request.number }}</div>
+    <div><b>Date:</b> {{ request.date }}</div>
+    <div><b>Address:</b> {{ request.address }}</div>
+    <button (click)="forwardRequest(request)" [disabled]="request.isButtonDisabled">Forward Request</button> 
+</div>

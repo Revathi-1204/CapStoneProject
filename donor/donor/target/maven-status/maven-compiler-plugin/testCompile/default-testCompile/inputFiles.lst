@@ -1,0 +1,12 @@
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/DonorControllerTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/service/UpcServiceTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/service/MnpspServiceTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/entity/UPCGenerationTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/DonorApplicationTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/dto/ResponsedtoTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/entity/DonorTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/repository/SubscriberRepositoryTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/repository/VerificationRepositoryTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/service/VerificationServiceTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/repository/UpcRepositoryTests.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/test/java/com/mnp/donor/entity/SubscriberTests.java

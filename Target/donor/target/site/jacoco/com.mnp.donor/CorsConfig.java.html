@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CorsConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">donor</a> &gt; <a href="index.source.html" class="el_package">com.mnp.donor</a> &gt; <span class="el_source">CorsConfig.java</span></div><h1>CorsConfig.java</h1><pre class="source lang-java linenums">package com.mnp.donor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+<span class="fc" id="L8">public class CorsConfig implements WebMvcConfigurer {</span>
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        // Specify the endpoint and allowed origins
+<span class="fc" id="L13">        registry.addMapping(&quot;/sub/getStatus&quot;)</span>
+<span class="fc" id="L14">                .allowedOrigins(&quot;http://localhost:4200&quot;) // Replace with your Angular app's URL</span>
+<span class="fc" id="L15">                .allowedMethods(&quot;GET&quot;, &quot;POST&quot;) // Add more methods as needed</span>
+<span class="fc" id="L16">                .allowCredentials(true);</span>
+
+        // Additional configuration for the OPTIONS preflight request
+<span class="fc" id="L19">        registry.addMapping(&quot;/sub/getStatus&quot;)</span>
+<span class="fc" id="L20">                .allowedOrigins(&quot;http://localhost:4200&quot;) // Replace with your Angular app's URL</span>
+<span class="fc" id="L21">                .allowedMethods(&quot;OPTIONS&quot;) // Allow the OPTIONS method</span>
+<span class="fc" id="L22">                .allowedHeaders(&quot;Authorization&quot;, &quot;Content-Type&quot;)</span>
+<span class="fc" id="L23">                .allowCredentials(true)</span>
+<span class="fc" id="L24">                .maxAge(3600); // 1 hour (you can adjust this value)</span>
+<span class="fc" id="L25">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

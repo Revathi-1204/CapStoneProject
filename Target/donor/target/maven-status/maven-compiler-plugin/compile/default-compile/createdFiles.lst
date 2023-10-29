@@ -1,0 +1,10 @@
+com/mnp/donor/repository/RequestRepository.class
+com/mnp/donor/RecepientApplication.class
+com/mnp/donor/repository/RecipientSubscriberRepository.class
+com/mnp/donor/Network.class
+com/mnp/donor/service/RequestService.class
+com/mnp/donor/CorsConfig.class
+com/mnp/donor/service/RecipientSubscriberService.class
+com/mnp/donor/controller/RecipientController.class
+com/mnp/donor/entity/RecipientSubscriber.class
+com/mnp/donor/entity/Request.class

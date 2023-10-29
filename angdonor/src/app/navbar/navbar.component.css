@@ -1,0 +1,65 @@
+/* Navbar styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('https://media.istockphoto.com/id/1390650720/photo/digital-network-connection-abstract-connection-of-dots-and-lines-technology-background-plexus.webp?b=1&s=170667a&w=0&k=20&c=SUkUz3EzbbcC25vGSHdV_9MxR0Mun8giVcuHoyOKwDo=');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.navbar h2 {
+  font-size: 30px;
+  font-weight: bold; /* Add bold font weight if desired */
+  text-align: left;
+  color: #f7b7b7; /* Set the text color to your preference */
+  font-family: 'Your Font Name', sans-serif;
+  margin: 0px ;
+  padding: 0;
+  letter-spacing: 2px;
+  margin-left: 0px;
+}
+
+/* Logo image styles */
+.logo-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Add a hover effect to zoom in on hover */
+.logo-image img:hover {
+  transform: scale(1.2);
+}
+
+/* Updated Navigation links styles with font changes */
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links ul li {
+  margin-right: 20px;
+}
+
+.nav-links ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 18px; 
+  font-family: 'Your Font Name', sans-serif; 
+  transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+  color: #e2e3e4;
+}

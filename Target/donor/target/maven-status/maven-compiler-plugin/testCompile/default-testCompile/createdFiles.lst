@@ -1,0 +1,8 @@
+com/mnp/donor/entity/RecipientEntityTests.class
+com/mnp/donor/repositories/SubscriberRepositoryTests.class
+com/mnp/donor/DonorApplicationTests.class
+com/mnp/donor/entity/SubscriberTests.class
+com/mnp/donor/service/RecipientServiceTests.class
+com/mnp/donor/SubscriberControllerTests.class
+com/mnp/donor/service/SubscriberServiceTests.class
+com/mnp/donor/repositories/RecipientRepositoryTests.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mnp.donor.service.RecipientServiceTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.449 s - in com.mnp.donor.service.RecipientServiceTests

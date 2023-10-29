@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RecipientController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">donor</a> &gt; <a href="index.source.html" class="el_package">com.mnp.donor.controller</a> &gt; <span class="el_source">RecipientController.java</span></div><h1>RecipientController.java</h1><pre class="source lang-java linenums">package com.mnp.donor.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mnp.donor.entity.RecipientSubscriber;
+import com.mnp.donor.entity.Request;
+import com.mnp.donor.service.RecipientSubscriberService;
+import com.mnp.donor.service.RequestService;
+
+@RestController
+@CrossOrigin
+@RequestMapping(&quot;/sub&quot;)
+public class RecipientController {
+
+    private final RequestService requestService;
+
+    @Autowired
+    public RecipientSubscriberService recipientSubscriberService;
+
+    @Autowired
+<span class="fc" id="L30">    public RecipientController(RequestService requestService) {</span>
+<span class="fc" id="L31">        this.requestService = requestService;</span>
+<span class="fc" id="L32">    }</span>
+
+    @PostMapping(&quot;/create&quot;)
+    public Request createPortingRequest(@RequestBody Request request) {
+<span class="fc" id="L36">        return requestService.createPortingRequest(request);</span>
+    }
+
+    @GetMapping(&quot;/all&quot;)
+    public List&lt;Request&gt; getAllPortingRequests() {
+<span class="fc" id="L41">        return requestService.getAllPortingRequests();</span>
+    }
+
+    @GetMapping(&quot;/getStatus/{mobileNumber}&quot;)
+    public Request getSubscriberByNumber(@PathVariable String mobileNumber){
+<span class="fc" id="L46">        return requestService.getSubscriberByMobileNumber(mobileNumber).get();</span>
+    }
+
+    @GetMapping(&quot;/allSubscribers&quot;)
+    public List&lt;RecipientSubscriber&gt; getAllSubscribers() {
+<span class="nc" id="L51">        return recipientSubscriberService.getAllSubscriber();</span>
+    }
+
+    @GetMapping(&quot;/activate/{number}&quot;)
+    public RecipientSubscriber activateSubscriber(@PathVariable String number) {
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if(recipientSubscriberService.activateSubscriber(number)){</span>
+<span class="nc" id="L57">            return recipientSubscriberService.getSubscriber(number);</span>
+        }
+<span class="nc" id="L59">        return null;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

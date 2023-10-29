@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+donor,com.mnp.donor.controller,RecipientController,16,22,2,0,4,6,3,4,2,4
+donor,com.mnp.donor.entity,RecipientSubscriber,0,38,0,0,0,16,0,11,0,11
+donor,com.mnp.donor.entity,Request,0,59,0,0,0,25,0,17,0,17
+donor,com.mnp.donor.service,RequestService,24,79,4,6,6,22,4,10,1,8
+donor,com.mnp.donor.service,RecipientSubscriberService,0,68,1,5,0,16,1,6,0,4
+donor,com.mnp.donor,CorsConfig,0,61,0,0,0,12,0,2,0,2
+donor,com.mnp.donor,Network,54,0,0,0,6,0,1,0,1,0
+donor,com.mnp.donor,RecepientApplication,5,3,0,0,2,1,1,1,1,1

@@ -1,0 +1,42 @@
+/* Styling for the request item container */
+.request-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Styling for the button */
+  .request-item button {
+    background-color: #222222;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styling for the button when disabled */
+  .request-item button[disabled] {
+    background-color: #3b3b3b;
+    cursor: not-allowed;
+  }
+  
+  /* Styling for the button on hover */
+  .request-item button:hover {
+    background-color: #0e0e0e;
+  }
+  
+  /* Style for the headers (Name, Number, Date, Address) */
+  .request-item div b {
+    font-weight: bold;
+  }
+  
+  /* Style for the headers and details */
+  .request-item div {
+    margin-bottom: 5px;
+  }
+  
+  /* Add additional styling as needed */
+  

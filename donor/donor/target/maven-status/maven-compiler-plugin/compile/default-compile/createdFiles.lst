@@ -1,0 +1,12 @@
+com/mnp/donor/repository/DonorSubscriberRepository.class
+com/mnp/donor/repository/RequestRepository.class
+com/mnp/donor/repository/VerificationRepository.class
+com/mnp/donor/entity/VerificationCases.class
+com/mnp/donor/service/VerificationService.class
+com/mnp/donor/dto/Responsedto.class
+com/mnp/donor/DonorApplication.class
+com/mnp/donor/service/MnspspService.class
+com/mnp/donor/entity/DonorSubscriber.class
+com/mnp/donor/service/UpcService.class
+com/mnp/donor/controller/DonorController.class
+com/mnp/donor/entity/Request.class

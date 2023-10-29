@@ -1,0 +1,19 @@
+
+<div>
+    <h2>Activate Your Mobile Number</h2>
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" placeholder="Enter Your Mobile Number"><br><br>
+    <button (click)="activateSubscriber()">Activate</button>
+    <div *ngIf="subscriber.number">
+        <p>{{ subscriber.name }}</p>
+        <p>{{subscriber.number}}</p>
+        <p>{{subscriber.address}}</p>
+        <p>{{subscriber.date}}</p>
+      </div>
+      <!-- <div *ngIf="showCelebration"> 
+        <p>Congratulations! 🎉</p> 
+      </div> -->
+      <!-- <img [src]="'assets/sample.gif'" alt="Sample GIF"> -->
+  </div>
+  
+

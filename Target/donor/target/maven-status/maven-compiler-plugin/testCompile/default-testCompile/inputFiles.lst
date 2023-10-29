@@ -1,0 +1,8 @@
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/service/SubscriberServiceTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/service/RecipientServiceTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/entity/RecipientEntityTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/entity/SubscriberTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/DonorApplicationTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/repositories/SubscriberRepositoryTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/repositories/RecipientRepositoryTests.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/test/java/com/mnp/donor/SubscriberControllerTests.java

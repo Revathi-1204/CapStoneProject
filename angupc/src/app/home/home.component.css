@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.process-step {
+    margin-bottom: 20px;
+}
+
+.process-step h2 {
+    font-size: 18px;
+}
+
+.process-step p {
+    font-size: 16px;
+    color: #333;
+}
+
+.reference {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reference a {
+    text-decoration: none;
+    color: #0077B6; /* Adjust the color to your preference */
+    font-weight: bold;
+}
+
+.reference a:hover {
+    color: #036194; /* Change color on hover for interactivity */
+}

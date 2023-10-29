@@ -1,0 +1,15 @@
+  
+  <div>
+    <h2>Get the Status of your request</h2>
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" placeholder="Enter Your Mobile Number"><br><br>
+    <button (click)="checkPortingRequestStatus()">Check Status</button>
+    <div *ngIf="request">
+      <p>Porting request status: {{ request.status}}</p>
+    </div>
+    
+    <div *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+  </div>
+  

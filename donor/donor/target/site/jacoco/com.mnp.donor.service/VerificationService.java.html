@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VerificationService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">donor</a> &gt; <a href="index.source.html" class="el_package">com.mnp.donor.service</a> &gt; <span class="el_source">VerificationService.java</span></div><h1>VerificationService.java</h1><pre class="source lang-java linenums">package com.mnp.donor.service;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mnp.donor.entity.VerificationCases;
+import com.mnp.donor.entity.Request;
+import com.mnp.donor.repository.VerificationRepository;
+import com.mnp.donor.repository.DonorSubscriberRepository;
+import com.mnp.donor.repository.RequestRepository;
+
+@Service
+<span class="fc" id="L19">public class VerificationService {</span>
+    @Autowired VerificationRepository verificationRepository;
+
+    @Autowired DonorSubscriberRepository donorSubRepository;
+    @Autowired RequestRepository requestRepository;
+
+    public Request request;
+
+    public void processPortingRequest(Request request) {
+<span class="nc" id="L28">        this.request = request;</span>
+<span class="nc" id="L29">        Optional&lt;VerificationCases&gt; verificationOpt = verificationRepository.findByNumber(this.request.getNumber());</span>
+    
+<span class="nc bnc" id="L31" title="All 2 branches missed.">        if (verificationOpt.isPresent()) {</span>
+<span class="nc" id="L32">            VerificationCases verification = verificationOpt.get();</span>
+<span class="nc" id="L33">            boolean isCleared = verifyClearance(verification);</span>
+    
+<span class="nc bnc" id="L35" title="All 2 branches missed.">            if (isCleared) {</span>
+<span class="nc" id="L36">                this.request.setRejectionReason(null);</span>
+<span class="nc" id="L37">                this.request.setStatus(&quot;CLEARED&quot;);</span>
+<span class="nc" id="L38">                requestRepository.save(this.request);</span>
+            } else {
+<span class="nc" id="L40">                this.request.setStatus(&quot;REJECTED&quot;);</span>
+<span class="nc" id="L41">                requestRepository.save(this.request);</span>
+            }
+<span class="nc" id="L43">        } else {</span>
+            // Handle the case when no verification data is found
+<span class="nc" id="L45">            this.request.setStatus(&quot;REJECTED&quot;);</span>
+<span class="nc" id="L46">            this.request.setRejectionReason(&quot;Verification data not found&quot;);</span>
+<span class="nc" id="L47">            requestRepository.save(this.request);</span>
+        }
+<span class="nc" id="L49">    }</span>
+    
+    
+
+    // Methods to verify clearance based on grounds 
+
+    // Outstanding payments due for the issued bill
+    public boolean verifyOutstandingPayments(VerificationCases verfication) {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (verfication.getOutStandingPayments() &gt; 0) {</span>
+<span class="fc" id="L58">            this.request.setRejectionReason(&quot;Outstanding payments dues&quot;);</span>
+<span class="fc" id="L59">            return false;</span>
+        }
+<span class="fc" id="L61">        return true;</span>
+    } 
+
+    //Period of ninety days has not elapsed
+    public boolean verifyNinetyDaysElapsed(VerificationCases verification) {
+<span class="fc" id="L66">        Date date = verification.getDate();</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">        if (date == null) {</span>
+<span class="nc" id="L68">            this.request.setRejectionReason(&quot;Activation date is missing&quot;);</span>
+<span class="nc" id="L69">            return false;</span>
+        }
+<span class="fc" id="L71">        LocalDate activationDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();</span>
+<span class="fc" id="L72">        LocalDate currentDate = LocalDate.now();</span>
+    
+<span class="fc" id="L74">        Period daysElapsed = Period.between(activationDate, currentDate);</span>
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if (daysElapsed.getDays() &lt; 90) { // Change to greater than 90</span>
+<span class="fc" id="L76">            this.request.setRejectionReason(&quot;Period of Ninety days has not elapsed&quot;);</span>
+<span class="fc" id="L77">            return false;</span>
+        }
+<span class="nc" id="L79">        return true; // Return true if less than or equal to 90 days</span>
+    }
+    
+
+    // Change of ownership of mobile number is under process
+    public boolean verifyOwnershipStatus(VerificationCases verification){
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if(verification.getOwnershipStatus().equalsIgnoreCase(&quot;pending&quot;)){</span>
+<span class="fc" id="L86">            this.request.setRejectionReason(&quot;Change of Mobile Number Ownership is in process&quot;);</span>
+<span class="fc" id="L87">            return false;</span>
+        }
+<span class="fc" id="L89">        return true;</span>
+    }
+
+    //The mobile number is sub-judice
+    public boolean verifyIsSubJudice(VerificationCases verification){
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        if(verification.getSubJudice().equalsIgnoreCase(&quot;legal&quot;)){</span>
+<span class="fc" id="L95">            return true;</span>
+        }
+<span class="fc" id="L97">        this.request.setRejectionReason(&quot;Mobile Number is under sub-judice&quot;);</span>
+<span class="fc" id="L98">        return false;</span>
+    }
+
+    //Prohibited by a Court of Law
+    public boolean verfiyIsProhibitedByLaw(VerificationCases verification){
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        if(!verification.isProhibited()){</span>
+<span class="nc" id="L104">            return true;</span>
+        }
+<span class="nc" id="L106">        this.request.setRejectionReason(&quot;Mobile Number prohibited by Court of Law&quot;);</span>
+<span class="nc" id="L107">        return false;</span>
+    }
+
+    //Validity of UPC has expired or not
+    public boolean verifyUPCValidity(VerificationCases verification) {
+<span class="nc" id="L112">        Date date = donorSubRepository.findByNumber(verification.getNumber()).get().getDate();</span>
+<span class="nc" id="L113">        LocalDate activationDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();</span>
+<span class="nc" id="L114">        LocalDate currentDate = LocalDate.now();</span>
+
+<span class="nc" id="L116">        Period period = Period.between(activationDate, currentDate);</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">        if (period.getDays() &lt;= 4) {</span>
+<span class="nc" id="L118">            return true; </span>
+        } 
+<span class="nc" id="L120">        this.request.setRejectionReason(&quot;UPC validity has expired&quot;);</span>
+<span class="nc" id="L121">        return false;</span>
+    }
+
+    // UPC mismatch
+    public boolean verifyUPC(VerificationCases verification) {
+<span class="nc" id="L126">        String upcGen =  donorSubRepository.findByNumber(verification.getNumber()).get().getUpc();</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">        if(upcGen.equals(this.request.getUpc())){</span>
+<span class="nc" id="L128">            return true;</span>
+        }
+<span class="nc" id="L130">        this.request.setRejectionReason(&quot;UPC does not match&quot;);</span>
+<span class="nc" id="L131">        return false;</span>
+    }
+
+    // In case of a corporate mobile number, the porting request is not accompanied by authorization letter from authorized signatory
+    public boolean verifyCorporateNumber(VerificationCases verification) {
+<span class="fc bfc" id="L136" title="All 4 branches covered.">        if (verification.isCorporate() &amp;&amp; !verification.isAuthorized()) {</span>
+<span class="fc" id="L137">            this.request.setRejectionReason(&quot;Unauthorized corporate number&quot;);</span>
+<span class="fc" id="L138">            return false;</span>
+        }
+<span class="fc" id="L140">        return true;</span>
+    }    
+
+    // Contractual obligation not cleared by the subscriber before porting
+    public boolean verifyContractualObligation(VerificationCases verification){
+<span class="fc bfc" id="L145" title="All 2 branches covered.">        if(verification.getContractualStatus().equalsIgnoreCase(&quot;Cleared&quot;)){</span>
+<span class="fc" id="L146">            return true;</span>
+        }
+<span class="fc" id="L148">        this.request.setRejectionReason(&quot;Contractual Obligation not cleared&quot;);</span>
+<span class="fc" id="L149">        return false;</span>
+    }
+
+    //the overall clearance
+    public boolean verifyClearance(VerificationCases verification) {
+<span class="nc bnc" id="L154" title="All 2 branches missed.">        return verifyOutstandingPayments(verification) &amp;&amp;</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">               verifyUPC(verification)&amp;&amp;</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">               verifyUPCValidity(verification)&amp;&amp;</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">               verfiyIsProhibitedByLaw(verification)&amp;&amp;</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">               verifyContractualObligation(verification)&amp;&amp;</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">               verifyCorporateNumber(verification)&amp;&amp;</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">               verifyNinetyDaysElapsed(verification) &amp;&amp;</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">               verifyIsSubJudice(verification);</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

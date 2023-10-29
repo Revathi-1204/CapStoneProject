@@ -1,0 +1,12 @@
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/service/MnspspService.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/repository/VerificationRepository.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/entity/Request.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/repository/DonorSubscriberRepository.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/dto/Responsedto.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/entity/DonorSubscriber.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/service/UpcService.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/controller/DonorController.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/entity/VerificationCases.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/repository/RequestRepository.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/DonorApplication.java
+/home/revathi/CapStoneProject/MNP/donor/donor/src/main/java/com/mnp/donor/service/VerificationService.java

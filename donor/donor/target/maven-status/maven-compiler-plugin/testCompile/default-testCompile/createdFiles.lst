@@ -1,0 +1,12 @@
+com/mnp/donor/dto/ResponsedtoTests.class
+com/mnp/donor/DonorApplicationTests.class
+com/mnp/donor/entity/SubscriberTests.class
+com/mnp/donor/repository/SubscriberRepositoryTests.class
+com/mnp/donor/entity/DonorTests.class
+com/mnp/donor/repository/UpcRepositoryTests.class
+com/mnp/donor/DonorControllerTests.class
+com/mnp/donor/entity/UPCGenerationTests.class
+com/mnp/donor/service/VerificationServiceTests.class
+com/mnp/donor/repository/VerificationRepositoryTests.class
+com/mnp/donor/service/MnpspServiceTests.class
+com/mnp/donor/service/UpcServiceTests.class

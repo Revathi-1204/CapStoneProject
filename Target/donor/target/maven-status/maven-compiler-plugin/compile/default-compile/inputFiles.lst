@@ -1,0 +1,10 @@
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/entity/Request.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/service/RecipientSubscriberService.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/entity/RecipientSubscriber.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/CorsConfig.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/repository/RequestRepository.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/service/RequestService.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/RecepientApplication.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/Network.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/repository/RecipientSubscriberRepository.java
+/home/revathi/CapStoneProject/MNP/Target/donor/src/main/java/com/mnp/donor/controller/RecipientController.java
